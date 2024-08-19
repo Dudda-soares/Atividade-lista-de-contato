@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    margin-top: 100px;
+    background-color: rgba(250, 160, 160, 0.397);
+    font: normal 15pt Arial;
+}
+
+header h1{
+    color: white;
+    text-align: center;
+    margin-bottom: 30px;
+    font-family: "Bungee Tint", sans-serif;
+
+}
+section{
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    width: 500px;
+    margin: auto;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.363);
+
+}
+.container input{
+    padding: 9px;
+    width: 100%;
+    margin: 8px auto ;
+}
+.opcao{
+    display: flex;
+    width: 16px;
+    gap: 15px;
+    margin: 8px;
+}
+
+#adicionar{
+    width: 150px;
+    border: 3px solid white;
+    border-radius: 8px;
+    background-color: rgba(192, 7, 7, 0.877);
+    color: white;
+}
+select#flista{
+    width: 100%;
+}
+
+footer{
+    color: white;
+    text-align: center;
+    font-style: italic;
+}
+
+h2{
+    font-size: 25px;
+    width: 70%;
+    border: 3px solid rgb(185, 1, 1);
+    border-radius: 10px;
+    background-color: rgb(185, 1, 1);
+    color: white;
+    margin: 45px auto;
+    justify-content: center;
+    display: flex;
+    
+}
+div#tabela{
+    display: flex;
+    justify-content: center;
+  
+    
+
+}
+.lista th {
+    padding-right: 350px;
+    color: rgb(185, 1, 1);
+    border: none;
+    border-bottom: 2px solid rgb(185, 1, 1);
+   
+
+ }
