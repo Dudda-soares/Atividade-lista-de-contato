@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: "Roboto Condensed", sans-serif;
 }
 
 body{
@@ -18,7 +18,17 @@ header h1{
     font-family: "Bungee Tint", sans-serif;
 
 }
-section{
+header img{
+    width: 28px;
+    margin-right: 8px;
+    border-radius: 5px;
+}
+.opcao img{
+    width: 30px;
+    height: 25px;
+    margin: none;
+}
+form {
     background-color: white;
     border-radius: 10px;
     padding: 15px;
@@ -27,33 +37,36 @@ section{
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.363);
 
 }
-.container input{
+form input{
     padding: 9px;
     width: 100%;
     margin: 8px auto ;
 }
 .opcao{
     display: flex;
-    width: 16px;
+    width: 15px;
     gap: 15px;
     margin: 8px;
 }
 
-#adicionar{
+button{
     width: 150px;
+    height: 35px;
     border: 3px solid white;
     border-radius: 8px;
     background-color: rgba(192, 7, 7, 0.877);
     color: white;
+    margin-top: 18px;
 }
 select#flista{
     width: 100%;
 }
 
 footer{
-    color: white;
+    color: rgba(8, 8, 8, 0.685);
     text-align: center;
     font-style: italic;
+    margin-top: 50px;
 }
 
 h2{

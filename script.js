@@ -1,62 +1,69 @@
-let num = document.querySelector('input#fnum')
-let lista = document.getElementById('flista')
-let res = document.getElementById('res')
-let valores = []
+const nome = document.getElementById('nome')
+const tele = document.getElementById('tel')
+const email = document.getElementById('email')
+const nomes = []
+const contato = []
+const mail = []
+const form = document.getElementById('form-contato')
 
-function isNumero(n){
-    if(Number(n) >= 1 && Number(n) <= 100){
-        return true
-    }else {
-        return false
-    }
-}
+let linhas = ''
+
+form.addEventListener('submit', function(e){
+    e.preventDefault()
+    
+    adicionar()
+    atualizaTabela()
+})
 
 function inLista(n, l){
-    if(l.indexOf(Number(n)) != -1){
+    if(l.indexOf (n) != -1){
         return true
     }else {
         return false
     }
 }
 
+
 function adicionar(){
-    if(isNumero(num.value) && !inLista(num.value, valores)){
-        valores.push(Number(num.value))
-        let item = document.createElement('option')
-        item.text = `valor ${num.value} adicionado.`
-        lista.appendChild(item)
+    if(!inLista(nome.value, nomes) && !inLista(tele.value, contato) && !inLista(email.value, mail)){
+        
+        adicionaLinha()
 
     }else{
         alert('Valor invalido ou ja encontrado na lista.')
     }
-    num.value = ''
-    num.focus()
-
+    
 }
 
-function finalizar(){
-    if (valores.length == 0){
-        alert('Adicione valores antes de finalizar!')
-    }else{
-        let total = valores.length
-        let maior = valores[0]
-        let menor = valores[0]
-        let soma = 0
-        let media = 0
-        
-        for(let pos in valores){
-            soma += valores[pos]
-            if(valores[pos] > maior)
-                maior = valores[pos]
-            if(valores[pos] < menor)
-                menor = valores[pos]
-        }
-       media = soma / total 
-        res.innerHTML = ''
-        res.innerHTML += `<P>Ao todo, temos ${total} numeros cadastrados</p>`
-        res.innerHTML += `<P>O maior valor informado foi ${maior} </p>`
-        res.innerHTML += `<P>O menor valor informado foi ${menor} </p>`
-        res.innerHTML += `<P>Somando todos os valores, temos ${soma}</p>`
-        res.innerHTML += `<P>A media dos valores digitados é ${media} </p>`
-    }   
+function adicionaLinha(){
+    nomes.push(nome.value)
+    contato.push(tele.value)
+    mail.push(email.value)
+
+    //alert(`o nome é ${nomes} e o numero é ${contato}e o email ${mail}`)
+
+    let linha = '<tr>'
+    linha += `<td>${nome.value}</td>`
+    linha += `<td>${tele.value}</td>`
+    linha += `<td>${email.value}</td>`
+    linha += '</tr>'
+
+    linhas += linha
+
+    nome.value = ''
+    tele.value = ''
+    email.value =''
+}
+function atualizaTabela(){
+    
+    const corpoTabela = document.querySelector('tbody')
+    corpoTabela.innerHTML = linhas
+}
+
+function inLista(n, l){
+    if(l.indexOf (n) != -1){
+        return true
+    }else {
+        return false
+    }
 }

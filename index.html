@@ -8,34 +8,34 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bungee+Tint&family=DM+Serif+Display:ital@0;1&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <header>
-        <h1>Agenda de Contatos</h1>
+        <h1><img src="./imagens/contato.png">Agenda de Contatos</h1>
     </header>
-    <section class="container">
+    <form id="form-contato">
         
-            <label for="fnum">Nome: </label><br>
-            <input type="text" name="fnum" required id="fnum"><br>
-            <label for="tel">Telefone: </label><br>
+            <label for="nome"><strong>Nome:</strong> </label><br>
+            <input type="text" name="fnum" required id="nome"><br>
+            <label for="tel"><strong>Telefone:</strong> </label><br>
             <input type="tel" id="tel" required><br>
-            <label for="email">E-mail: </label><br>
-            <input type="email" id="email" required><br>
-      
+          
         <div class="opcao">
-            <input type="radio" name="celtel" id="cel"> 
-            <label for="cel">Celular</label>
-            <input type="radio" name="celtel" id="tel">
+            <input type="radio" name="celtel" id="cel"><img src="./imagens/47-479357_cell-phone-icon-red.png"> 
+            <label for="cel">Celular:</label>
+            <input type="radio" name="celtel" id="tel"><img src="./imagens/telefonev1.png"> 
             <label for="tel">Residencial</label> <br>
         </div>
-        
-        <input id='adicionar' type="button" value="Adicionar" onclick="adicionar()">
-        <br><br><select name="flista" id="flista" size="10"></select>
-    
-        <div id="res">
             
-        </div>   
-    </section>
+        <label for="email"><strong>E-mail:</strong> </label><br>
+        <input type="email" id="email" required><br>
+        <button type="submit">Cadastrar</button>
+          
+    </form>
     
     <h2>Lista de Contatos</h2>
     
@@ -49,12 +49,11 @@
             </tr>
         </thead>
         <tbody>
-           
         </tbody>
         </table>
     </div>
     <footer>
-        <p>&copy; CursoemVideo</p>
+        <p>&copy;EBAC </p>
     </footer>
     <script src="script.js"></script>
 </body>
