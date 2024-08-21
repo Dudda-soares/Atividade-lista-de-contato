@@ -5,6 +5,7 @@ const nomes = []
 const contato = []
 const mail = []
 const form = document.getElementById('form-contato')
+const tabelaContatos = document.querySelector('#tablebody tbody');
 
 let linhas = ''
 
@@ -12,7 +13,8 @@ form.addEventListener('submit', function(e){
     e.preventDefault()
     
     adicionar()
-    atualizaTabela()
+
+    
 })
 
 function inLista(n, l){
@@ -23,48 +25,60 @@ function inLista(n, l){
     }
 }
 
+function numeroNecessario(n){
+    if(n.length < 11){
+        return false
+    }else{
+        return true
+    }
+}
 
 function adicionar(){
-    if(!inLista(nome.value, nomes) && !inLista(tele.value, contato) && !inLista(email.value, mail)){
+    const tipoContato = obterTipoContato()
+    if(numeroNecessario(tele.value) && !inLista(nome.value, nomes) && !inLista(tele.value, contato) && !inLista(email.value, mail)){
         
-        adicionaLinha()
+        nomes.push(nome.value)
+        contato.push(tele.value)
+        mail.push(email.value)
+        adicionaLinha(tipoContato)
 
+        
+        nome.value = ''
+        tele.value = ''
+        email.value =''
+        //document.querySelector('input[name="celtel"]:checked').checked = false
     }else{
         alert('Valor invalido ou ja encontrado na lista.')
     }
     
 }
+function obterTipoContato() {
+    const fsex = document.getElementsByName('celtel');
+    for (let i = 0; i < fsex.length; i++) {
+        if (fsex[i].checked) {
+            return fsex[i].value;
+        }
+    }
+    return null;
+}
 
-function adicionaLinha(){
-    nomes.push(nome.value)
-    contato.push(tele.value)
-    mail.push(email.value)
-
+function adicionaLinha(tipoContato){
+    const icone = tipoContato === 'cel' ? 'imagens/bolacel.png' : 'imagens/telefonev1.png'
+   // const tipoTexto = tipoContato === 'cel' ? 'Celular' : 'Telefone';
     //alert(`o nome é ${nomes} e o numero é ${contato}e o email ${mail}`)
 
     let linha = '<tr>'
-    linha += `<td>${nome.value}</td>`
-    linha += `<td>${tele.value}</td>`
-    linha += `<td>${email.value}</td>`
+    linha += `<td style="text-transform: uppercase;">${nome.value}</td>`
+    linha += `<td style="text-transform: uppercase; text-align: center;">${tele.value}<img src="${icone}" style="width:37px; height:37px;margin-left:55px; border-radius: 15px;text-align: center; "></td>`
+    linha += `<td style="text-transform: uppercase;">${email.value}</td>`
+   // linha += `<td>${tipoTexto}</td>`
     linha += '</tr>'
 
-    linhas += linha
+   // linhas += linha
+    tabelaContatos.innerHTML += linha;
+     tabelaContatos.style.backgroundColor = '#f2f2f2'
+   
+}  
 
-    nome.value = ''
-    tele.value = ''
-    email.value =''
 
-    const tabelaLinha = document.querySelector('#tablebody tbody')
-    const novaLinha = document.createElement('tr')
-
-    tabelaLinha.style.backgroundColor = '#f2f2f2'
-    tabelaLinha.appendChild(novaLinha)
-    
-
-}
-function atualizaTabela(){
-    
-    const corpoTabela = document.querySelector('tbody')
-    corpoTabela.innerHTML = linhas
-}
 
