@@ -29,7 +29,7 @@ header img{
     margin: none;
 }
 form {
-    background-color: white;
+    background-color: #ffffff;
     border-radius: 10px;
     padding: 15px;
     width: 500px;
@@ -63,7 +63,7 @@ select#flista{
 }
 
 footer{
-    color: rgba(8, 8, 8, 0.685);
+    color: rgba(250, 13, 13, 0.493);
     text-align: center;
     font-style: italic;
     margin-top: 50px;
@@ -81,13 +81,26 @@ h2{
     display: flex;
     
 }
-div#tabela{
+.tabela-horizontal{
     display: flex;
     justify-content: center;
-  
-    
 
 }
+.tabela-horizontal {
+    border-collapse: collapse; /* Remove espaçamento entre bordas */
+    width: 100%; /* Ajusta a largura da tabela */
+}
+
+.tabela-horizontal th, .tabela-horizontal td {
+    border: 1px solid #fa0303; /* Define a cor e espessura das linhas horizontais */
+    padding: 8px; /* Adiciona espaçamento interno nas células */
+    text-align: left; /* Alinha o texto à esquerda */
+}
+
+.tabela-horizontal th {
+    background-color: #f2f2f2; /* Cor de fundo dos cabeçalhos */
+}
+
 .lista th {
     padding-right: 350px;
     color: rgb(185, 1, 1);
@@ -95,4 +108,7 @@ div#tabela{
     border-bottom: 2px solid rgb(185, 1, 1);
    
 
+ }
+ color{
+    color: rgba(194, 6, 1, 0.195)
  }

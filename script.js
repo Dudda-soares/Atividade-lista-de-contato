@@ -53,6 +53,14 @@ function adicionaLinha(){
     nome.value = ''
     tele.value = ''
     email.value =''
+
+    const tabelaLinha = document.querySelector('#tablebody tbody')
+    const novaLinha = document.createElement('tr')
+
+    tabelaLinha.style.backgroundColor = '#f2f2f2'
+    tabelaLinha.appendChild(novaLinha)
+    
+
 }
 function atualizaTabela(){
     
@@ -60,10 +68,3 @@ function atualizaTabela(){
     corpoTabela.innerHTML = linhas
 }
 
-function inLista(n, l){
-    if(l.indexOf (n) != -1){
-        return true
-    }else {
-        return false
-    }
-}
