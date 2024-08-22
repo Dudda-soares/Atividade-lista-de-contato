@@ -13,8 +13,6 @@ form.addEventListener('submit', function(e){
     e.preventDefault()
     
     adicionar()
-
-    
 })
 
 function inLista(n, l){
@@ -42,11 +40,10 @@ function adicionar(){
         mail.push(email.value)
         adicionaLinha(tipoContato)
 
-        
         nome.value = ''
         tele.value = ''
         email.value =''
-        //document.querySelector('input[name="celtel"]:checked').checked = false
+      
     }else{
         alert('Valor invalido ou ja encontrado na lista.')
     }
@@ -64,20 +61,15 @@ function obterTipoContato() {
 
 function adicionaLinha(tipoContato){
     const icone = tipoContato === 'cel' ? 'imagens/bolacel.png' : 'imagens/telefonev1.png'
-   // const tipoTexto = tipoContato === 'cel' ? 'Celular' : 'Telefone';
-    //alert(`o nome é ${nomes} e o numero é ${contato}e o email ${mail}`)
-
+  
     let linha = '<tr>'
     linha += `<td style="text-transform: uppercase;">${nome.value}</td>`
     linha += `<td style="text-transform: uppercase; text-align: center;">${tele.value}<img src="${icone}" style="width:37px; height:37px;margin-left:55px; border-radius: 15px;text-align: center; "></td>`
     linha += `<td style="text-transform: uppercase;">${email.value}</td>`
-   // linha += `<td>${tipoTexto}</td>`
     linha += '</tr>'
 
-   // linhas += linha
     tabelaContatos.innerHTML += linha;
-     tabelaContatos.style.backgroundColor = '#f2f2f2'
-   
+    tabelaContatos.style.backgroundColor = '#f2f2f2'
 }  
 
 
