@@ -45,7 +45,7 @@ function adicionar(){
         email.value =''
       
     }else{
-        alert('Valor invalido ou ja encontrado na lista.')
+        alert('Numero invalido ou dados ja encontrado na lista.')
     }
     
 }
